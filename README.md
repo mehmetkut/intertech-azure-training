@@ -4,6 +4,7 @@
 
 
 [https://www.microsoft.com/handsonlabs/SelfPacedLabs](https://www.microsoft.com/handsonlabs/SelfPacedLabs)
+
 [https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started](https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started)
 
 ## Microsoft Azure Sınavları
