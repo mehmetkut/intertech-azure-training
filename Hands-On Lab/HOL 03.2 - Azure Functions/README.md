@@ -52,7 +52,7 @@ The first step in writing an Azure Function is to create an Azure Function App. 
 
 2. Click **+ New**, followed by **Compute** and **Function App**.
 
-    ![Creating an Azure Function App](Images/new-function-app.png)
+    ![Creating an Azure Function App](images/new-function-app.png)
 
     _Creating an Azure Function App_
 
@@ -60,13 +60,13 @@ The first step in writing an Azure Function is to create an Azure Function App. 
 
 	> The app name becomes part of a DNS name and therefore must be unique within Azure. Make sure a green check mark appears to the name indicating it is unique. You probably **won't** be able to use "functionslab" as the app name.
  
-    ![Naming a Function App](Images/function-app-name.png)
+    ![Naming a Function App](images/function-app-name.png)
 
     _Naming a Function App_
 
 1. Click **Resource groups** in the ribbon on the left side of the portal, and then click the resource group created for the Function App.
  
-    ![Opening the resource group](Images/open-resource-group.png)
+    ![Opening the resource group](images/open-resource-group.png)
 
     _Opening the resource group_
 
@@ -75,25 +75,25 @@ The first step in writing an Azure Function is to create an Azure Function App. 
 
 	> Refresh the page in the browser every now and then to update the deployment status. Clicking the **Refresh** button in the resource-group blade refreshes the list of resources in the resource group, but does not reliably update the deployment status.
 
-    ![Opening the storage account](Images/open-storage-account-after-deployment.png)
+    ![Opening the storage account](images/open-storage-account-after-deployment.png)
 
     _Opening the storage account_
 
 1. Click **Blobs** to view the contents of blob storage.
 
-    ![Opening blob storage](Images/open-blob-storage.png)
+    ![Opening blob storage](images/open-blob-storage.png)
 
     _Opening blob storage_
 
 1. Click **+ Container** to add a container.
 
-    ![Adding a container](Images/add-container.png)
+    ![Adding a container](images/add-container.png)
 
     _Adding a container_
 
 1. Type "uploaded" into the **Name** box. Then click the **Create** button to create the container.
 
-    ![Naming the container](Images/name-container.png)
+    ![Naming the container](images/name-container.png)
 
     _Naming the container_
 
@@ -101,7 +101,7 @@ The first step in writing an Azure Function is to create an Azure Function App. 
 
 1. Confirm that all three containers were added to blob storage.
 
-    ![The new containers](Images/new-containers.png)
+    ![The new containers](images/new-containers.png)
 
     _The new containers_
 
@@ -114,19 +114,19 @@ Once you have created an Azure Function App, you can add Azure Functions to it. 
 
 1. Return to the blade for the "FunctionsLabResourceGroup" resource group and click the Azure Function App that you created in [Exercise 1](#Exercise1). 
 
-    ![Opening the Function App](Images/open-function-app.png)
+    ![Opening the Function App](images/open-function-app.png)
 
     _Opening the Function App_
 
 1. Click **+ New Function** and set **Language** to **C#**. Then click **BlobTrigger-CSharp**.
   
-    ![Selecting a function template](Images/function-app-select-template.png)
+    ![Selecting a function template](images/function-app-select-template.png)
 
     _Selecting a function template_
 
 1. Enter "BlobImageAnalysis" (without quotation marks) for the function name and "uploaded/{name}" into the **Path** box. (The latter applies the blob storage trigger to the "uploaded" container that you created in Exercise 1.) Then click the **Create** button to create the Azure Function.
 
-    ![Creating an Azure Function](Images/create-azure-function.png)
+    ![Creating an Azure Function](images/create-azure-function.png)
 
     _Creating an Azure Function_
 
@@ -243,13 +243,13 @@ Once you have created an Azure Function App, you can add Azure Functions to it. 
 
 1. Click the **Save** button at the top of the code editor to save your changes. The click **View Files**.
 
-    ![Saving the function](Images/save-run-file.png)
+    ![Saving the function](images/save-run-file.png)
 
     _Saving the function_
 
 1. Click **+ Add** to add a new file, and name the file **project.json**.
 
-    ![Adding a project file](Images/add-project-file.png)
+    ![Adding a project file](images/add-project-file.png)
 
     _Adding a project file_
 
@@ -269,7 +269,7 @@ Once you have created an Azure Function App, you can add Azure Functions to it. 
 
 1. Click the **Save** button to save your changes. Then click **run.csx** to go back to that file in the code editor.
 
-    ![Saving the project file](Images/save-project-file.png)
+    ![Saving the project file](images/save-project-file.png)
 
     _Saving the project file_
 
@@ -282,37 +282,37 @@ The Azure Function you created in [Exercise 2](#Exercise2) loads a subscription 
 
 1. Open a new browser window and navigate to https://www.microsoft.com/cognitive-services/en-us/subscriptions. If you haven't signed up for the Computer Vision API, do so now. (Signing up is free.) Then click **Copy** under **Key 1** in your Computer Vision subscription to copy the subscription key to the clipboard.
 
-    ![Copying the subscription key to the clipboard](Images/computer-vision-key.png)
+    ![Copying the subscription key to the clipboard](images/computer-vision-key.png)
 
     _Copying the subscription key to the clipboard_
 
 1. Return to your Function App in the Azure Portal and click **Function app settings** in the lower-left corner of the function designer.
 
-    ![Viewing Function App settings](Images/function-app-select-app-settings.png)
+    ![Viewing Function App settings](images/function-app-select-app-settings.png)
 
     _Viewing Function App settings_
 
 1. Scroll down the page and click **Go to App Service Settings**.
 
-    ![Viewing App Service settings](Images/open-app-service-settings.png)
+    ![Viewing App Service settings](images/open-app-service-settings.png)
 
     _Viewing App Service settings_
 
 1. Click **Application settings**. Then scroll down until you find the "App settings" section. Add a new app setting named "SubscriptionKey" (without quotation marks), and paste the subscription key that is on the clipboard into the **Value** box. Then click **Save** at the top of the blade.
 
-    ![Adding a subscription key](Images/add-key.png)
+    ![Adding a subscription key](images/add-key.png)
 
     _Adding a subscription key_
 
 1. The app settings are now configured for your Azure Function. It's a good idea to validate those settings by recompiling the function and ensuring that it compiles without errors. Scroll left until you see the "Function app" blade, and then click **BlobImageAnalysis**.
 	
-    ![Opening the function](Images/open-function.png)
+    ![Opening the function](images/open-function.png)
 
     _Opening the function_
 
 1. Make sure **Develop** is selected. Then click **Run** to recompile and run the function. Confirm that "Compilation succeeded" appears in the output log.
 	
-    ![Recompiling the function](Images/function-recompile.png)
+    ![Recompiling the function](images/function-recompile.png)
 
     _Recompiling the function_
 
@@ -325,43 +325,43 @@ Your function is configured to listen for changes to the blob container named "u
 
 1. In the Azure Portal, go to the resource group created for your Function App. Then click the storage account that was created for it.
 
-    ![Opening the storage account](Images/open-storage-account.png)
+    ![Opening the storage account](images/open-storage-account.png)
 
     _Opening the storage account_
 
 1. Click **Blobs** to view the contents of blob storage.
 
-    ![Opening blob storage](Images/open-blob-storage.png)
+    ![Opening blob storage](images/open-blob-storage.png)
 
     _Opening blob storage_
 
 1. Click **uploaded** to open the "uploaded" container.
 
-    ![Opening the "uploaded" container](Images/open-uploaded-container.png)
+    ![Opening the "uploaded" container](images/open-uploaded-container.png)
 
     _Opening the "uploaded" container_
 
 1. Click **Upload**.
 
-    ![Uploading images to the "uploaded" container](Images/upload-images-1.png)
+    ![Uploading images to the "uploaded" container](images/upload-images-1.png)
 
     _Uploading images to the "uploaded" container_
 
 1. Click the button with the folder icon to the right of the **Files** box. Select all of the files in this lab's "Resources" folder. Then click the **Upload** button to upload the files to the "uploaded" container.
 
-    ![Uploading images to the "uploaded" container](Images/upload-images-2.png)
+    ![Uploading images to the "uploaded" container](images/upload-images-2.png)
 
     _Uploading images to the "uploaded" container_
 
 1. Return to the blade for the "uploaded" container and verify that eight images were uploaded.
 
-    ![Images uploaded to the "uploaded" container](Images/uploaded-images.png)
+    ![Images uploaded to the "uploaded" container](images/uploaded-images.png)
 
     _Images uploaded to the "uploaded" container_
 
 1. Close the blade for the "uploaded" container and open the "accepted" container.
 
-    ![Opening the "accepted" container](Images/open-accepted-container.png)
+    ![Opening the "accepted" container](images/open-accepted-container.png)
 
     _Opening the "accepted" container_
 
@@ -369,19 +369,19 @@ Your function is configured to listen for changes to the blob container named "u
 
 	> It may take a minute or more for all of the images to appear in the container. If necessary, click **Refresh** every few seconds until you see all seven images.
 
-    ![Images uploaded to the "accepted" container](Images/accepted-images.png)
+    ![Images uploaded to the "accepted" container](images/accepted-images.png)
 
     _Images uploaded to the "accepted" container_
 
 1. Close the blade for the "accepted" container and open the blade for the "rejected" container.
 
-    ![Opening the "rejected" container](Images/open-rejected-container.png)
+    ![Opening the "rejected" container](images/open-rejected-container.png)
 
     _Opening the "rejected" container_
 
 1. Verify that the "rejected" container holds one image. **This image was classified as adult or racy (or both) by the Computer Vision API**.
 
-    ![Images uploaded to the "rejected" container](Images/rejected-images.png)
+    ![Images uploaded to the "rejected" container](images/rejected-images.png)
 
     _Images uploaded to the "rejected" container_
 
@@ -402,19 +402,19 @@ In this exercise, you will use the cross-platform [Microsoft Azure Storage Explo
 
 	> If this is the first time you have run Storage Explorer, you may have to click the person icon and tell it which Azure subscription or subscriptions you want it to display. 
 
-    ![Opening the "rejected" container](Images/explorer-open-rejected-container.png)
+    ![Opening the "rejected" container](images/explorer-open-rejected-container.png)
 
     _Opening the "rejected" container_
 
 1. Right-click (on a Mac, Command-click) the image in the "rejected" container and select **Properties** from the context menu.
 
-    ![Viewing blob metadata](Images/explorer-view-blob-metadata.png)
+    ![Viewing blob metadata](images/explorer-view-blob-metadata.png)
 
     _Viewing blob metadata_
 
 1. Inspect the blob's metadata. *IsAdultContent* and *isRacyContent* are Boolean values that indicate whether the Computer Vision API detected adult or racy content in the image. *adultScore* and *racyScore* are the computed probabilities.
 
-    ![Scores returned by the Computer Vision API](Images/explorer-metadata-values.png)
+    ![Scores returned by the Computer Vision API](images/explorer-metadata-values.png)
 
     _Scores returned by the Computer Vision API_
 
