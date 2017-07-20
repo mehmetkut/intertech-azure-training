@@ -58,37 +58,37 @@ The first step in working with Azure SQL Database is to create a database accoun
 
 1. Click **+ New**, followed by **Databases** and **SQL Database**.
 
-    ![Creating a new Azure SQL Database](Images/portal-select-new-azure-sql.png)
+    ![Creating a new Azure SQL Database](images/portal-select-new-azure-sql.png)
 
     _Creating a new Azure SQL Database_
 
 1. In the "SQL Database" blade, enter "Northwind" (without quotation marks) as the database name. Select **Create new** under **Resource group** and name the resource group "SQLDatabaseResourceGroup." Leave **Select source** set to **Blank database** and click **Server - Configure required settings**.
 
-    ![Configuring an Azure SQL Database](Images/portal-select-server-blade.png)
+    ![Configuring an Azure SQL Database](images/portal-select-server-blade.png)
 
     _Configuring an Azure SQL Database_
 
 1. Click **Create a new server**. In the "New Server" blade, enter a unique name for **Server name** and make sure a green check mark appears next to it. (You can only use numbers and lowercase letters since the name becomes part of a DNS name.) Specify "sqladmin" as the user name and "Password_1" as the password. Select the location nearest you, and then click the **Select** button.
 
-    ![Creating a database server](Images/portal-create-new-server.png)
+    ![Creating a database server](images/portal-create-new-server.png)
 
     _Creating a database server_
 	
 1. Click the **Create** button at the bottom of the "SQL Database" blade.
  
-    ![Creating the database](Images/portal-create-new-database.png)
+    ![Creating the database](images/portal-create-new-database.png)
 
     _Creating the database_	
 
 1. Click **Resource groups** in the ribbon on the left side of the portal, and then click the resource group created for the SQL Database.
  
-    ![Opening the resource group](Images/open-resource-group.png)
+    ![Opening the resource group](images/open-resource-group.png)
 
     _Opening the resource group_
 
 1. Wait until "Deploying" changes to "Succeeded," indicating that the SQL Database has been deployed. You can click the **Refresh** button at the top of the blade to refresh the deployment status.
 
-    ![Monitoring the deployment status](Images/deployment-status.png)
+    ![Monitoring the deployment status](images/deployment-status.png)
 
     _Monitoring the deployment status_
 
@@ -101,7 +101,7 @@ Now that you've created a SQL Database in Azure, the next step is to add data. I
 
 1. Click the SQL Database that you deployed in [Exercise 1](#Exercise1).
 
-    ![Opening the Northwind database](Images/open-database.png)
+    ![Opening the Northwind database](images/open-database.png)
 
     _Opening the Northwind database_	
 
@@ -109,43 +109,43 @@ Now that you've created a SQL Database in Azure, the next step is to add data. I
 
 	> You may be prompted to allow the Microsoft Visual Studio Web Protocol Handler to switch from your browser to Visual Studio. If you are, click **Yes**.
  
-    ![Opening the database in Visual Studio](Images/open-in-visual-studio.png)
+    ![Opening the database in Visual Studio](images/open-in-visual-studio.png)
 
     _Opening the database in Visual Studio_	
  
 1. In Visual Studio's "Connect" dialog, enter the password ("Password_1") you specified in Exercise 1, Step 4. Then check the **Remember Password** box and click **Connect**. 
  
-    ![Connecting to the database from Visual Studio](Images/vs-connect-dialog.png)
+    ![Connecting to the database from Visual Studio](images/vs-connect-dialog.png)
 
     _Connecting to the database from Visual Studio_	
 
 1. When prompted to create a new firewall rule, accept the defaults and click **OK**. This will allow Visual Studio to get through the firewall on the server and connect to the SQL Database.
 
-    ![Creating a new firewall rule](Images/vs-firewall-rule-dialog.png)
+    ![Creating a new firewall rule](images/vs-firewall-rule-dialog.png)
 
     _Creating a new firewall rule_	
 
 1. In Visual Studio's SQL Server Object Explorer (SSOE), right-click the node representing the SQL Database server that you deployed in the previous exercise and select **New Query...**.
  
-    ![Starting a new query](Images/vs-select-new-query-01.png)
+    ![Starting a new query](images/vs-select-new-query-01.png)
 
     _Starting a new query_	
 
 1. Use the **Edit -> Insert File as Text...** command to open the file named **Create MASTER logins.sql** located in the "Resources" folder of this lab.
  
-    ![Inserting a SQL script](Images/vs-selecting-file-open.png)
+    ![Inserting a SQL script](images/vs-selecting-file-open.png)
 
     _Inserting a SQL script_	
 
 1. Right-click anywhere in the script and select **Execute**. This script creates three user logins that will be used in later exercises.
  
-    ![Executing the script](Images/vs-execute-master-script.png)
+    ![Executing the script](images/vs-execute-master-script.png)
 
     _Executing the script_	
 
 1. In the SQL Server Object Explorer, expand the node for your SQL Database server and right-click the Northwind database. Then select **New Query...** from the context menu.
  
-    ![Starting a new query](Images/vs-select-new-query-02.png)
+    ![Starting a new query](images/vs-select-new-query-02.png)
 
     _Starting a new query_	
 
@@ -153,13 +153,13 @@ Now that you've created a SQL Database in Azure, the next step is to add data. I
 
 1. At this point, it might be helpful to familiarize yourself with some of the tables that the script created. Expand the "Northwind" node in SSOE, and then expand the "Tables" node to reveal the tables in the database. Right-click the Customers table and select **View Data** from the context menu.
  
-    ![Opening the Customers table](Images/vs-select-view-data.png)
+    ![Opening the Customers table](images/vs-select-view-data.png)
 
     _Opening the Customers table_		
 
 1. Confirm that you see a list of customers like the one below.
  
-    ![Viewing customer records](Images/vs-view-customers.png)
+    ![Viewing customer records](images/vs-view-customers.png)
 
     _Viewing customer records_		
 
@@ -172,19 +172,19 @@ Most modern apps — mobile apps especially — store data remotely, either in a
 
 1. In Visual Studio, select **File -> New -> Project** to create a new project. In the "New Project" dialog, select the Visual C# **ASP.NET Web Application** template and name the project "OrderViewServices." Then click **OK**.
 
-    ![Creating a new project](Images/vs-create-new-web-project.png)
+    ![Creating a new project](images/vs-create-new-web-project.png)
 
     _Creating a new project_		
  
 1. In the "New ASP.NET Project" dialog, select the **Azure API App** template, make sure **Host in the cloud** is checked, and click **OK**.
  
-    ![Configuring the project](Images/vs-select-api-template.png)
+    ![Configuring the project](images/vs-select-api-template.png)
 
     _Configuring the project_		
 
 1.	In the "Create App Service" dialog, make sure **SQLDatabaseResourceGroup** is selected under **Resource Group**. (This will add the Azure API App to the same resource group as the SQL Database, which is handy because deleting the resource group will delete both.) Then click the **New...** button next to **App Service Plan** and select the location nearest you for hosting the Web App, and **Free** as the **Size.** Click **OK** to dismiss the "Configure App Service Plan" dialog. Then click **Create** at the bottom of the "Create App Service" dialog.
  
-    ![Creating an Azure App Service](Images/vs-create-app-service.png)
+    ![Creating an Azure App Service](images/vs-create-app-service.png)
 
     _Creating an Azure App Service_		 
 
@@ -192,67 +192,67 @@ Most modern apps — mobile apps especially — store data remotely, either in a
 
 1. With the basic project structure in place, the next step is to add logic to access the SQL Database in Azure. You will start by connecting an [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx) model to the database. In Solution Explorer, right-click the project and use the **Add -> New Folder** command to create a folder named "Data" at the root of the project.
  
-    ![Adding a new folder to the project](Images/vs-create-new-folder-01.png)
+    ![Adding a new folder to the project](images/vs-create-new-folder-01.png)
 
     _Adding a new folder to the project_		 
 
 1. Right-click the "Data" folder and select **Add -> New Item...**. In the "Add New Item" dialog, select **ADO.NET Entity Data Model** and type "OrdersModel" into the **Name** field. Then click the **Add** button.
  
-    ![Adding an entity data model](Images/vs-add-orders-model.png)
+    ![Adding an entity data model](images/vs-add-orders-model.png)
 
     _Adding an entity data model_		 
 
 1. Select **EF Designer from database** and click **Next**.
  
-    ![Selecting the EF Designer](Images/vs-select-ef-designer.png)
+    ![Selecting the EF Designer](images/vs-select-ef-designer.png)
 
     _Selecting the EF Designer_		 
 
 1. Click the **New Connection...** button.
  
-    ![Creating a new connection](Images/vs-select-new-connection.png)
+    ![Creating a new connection](images/vs-select-new-connection.png)
 
     _Creating a new connection_		 
 
 1. If you are prompted to choose a data source, select **Microsoft SQL Server** and click **Continue**.
 
-	![Choosing a data source](Images/choose-data-source.png)
+	![Choosing a data source](images/choose-data-source.png)
 
 	_Choosing a data source_
 
 1. In the **Server name** box, type the name that you assigned to the database server in Exercise 1, Step 4, followed by ".database.windows.net." Change **Authentication** to **SQL Server Authentication**, and enter the user name ("sqladmin") and password ("Password_1") for the database server. Select **Northwind** under **Select or enter a database name**, and then click **OK**.
  
-    ![Setting connection properties](Images/vs-setting-connection-properties.png)
+    ![Setting connection properties](images/vs-setting-connection-properties.png)
 
     _Setting connection properties_	
 	
 1. Select **No, exclude sensitive data from the connection string**. (Selecting this option will keep the database password out of the project's Web.config file.) Then click **Next**.
 
-    ![Setting connection string properties](Images/vs-setting-connection-security.png)
+    ![Setting connection string properties](images/vs-setting-connection-security.png)
 
     _Setting connection string properties_	
 
 1. Select **Entity Framework 6.x** and click **Next**.
 
-    ![Specifying the Entity Framework version](Images/vs-set-connection-version.png)
+    ![Specifying the Entity Framework version](images/vs-set-connection-version.png)
 
     _Specifying the Entity Framework version_		
 	
 1. Expand the "Tables" node and check the **dbo** box. This will allow all of the tables in the database to be accessed through the Entity Framework model. Then click **Finish**.
  
-    ![Specifying which tables to include in the model](Images/vs-select-dbo-entities.png)
+    ![Specifying which tables to include in the model](images/vs-select-dbo-entities.png)
 
     _Specifying which tables to include in the model_			
 
 1. Confirm that **OrdersModel.edmx** is added to the project and that the data model is depicted as below.
 
-    ![The OrdersModel data model](Images/vs-model-created.png)
+    ![The OrdersModel data model](images/vs-model-created.png)
 
     _The OrdersModel data model_			
 	
 1. Now it is time to write code to access the data model. In Solution Explorer, right-click the "Models" folder and select **Add -> Class...** to add a class file to the folder. Type "OrderInformation.cs" (without quotation marks) into the **Name** box, and then click **OK**.
 
-    ![Adding the OrderInformation class](Images/vs-add-orderinfomation-class.png)
+    ![Adding the OrderInformation class](images/vs-add-orderinfomation-class.png)
 
     _Adding the OrderInformation class_				
 	
@@ -517,7 +517,7 @@ Most modern apps — mobile apps especially — store data remotely, either in a
 
 1. Select **Web API 2 Controller – Empty** and click **Add**. Name the controller "OrdersController" and add it to the project.
  
-    ![Adding a new controller](Images/vs-add-new-controller.png)
+    ![Adding a new controller](images/vs-add-new-controller.png)
 
     _Adding a new controller_	
 
@@ -549,7 +549,7 @@ Most modern apps — mobile apps especially — store data remotely, either in a
 
 1. You can use your browser to test the API App by calling methods and seeing what's returned. Use Visual Studio's **Debug -> Start Without Debugging** command (or simply press **Ctrl+F5**) to launch the application in your browser. Initially, you will see a 403 error because no method was specified. But now append "/api/Orders" to the URL in the browser's address bar and press **Enter**. This will call the *GetOrders* method in the *OrdersController class*. Confirm that an array of JSON objects representing orders is returned:
  
-    ![JSON returned by the GetOrders method](Images/ie-api-specified.png)
+    ![JSON returned by the GetOrders method](images/ie-api-specified.png)
 
     _JSON returned by the GetOrders method_	
 
@@ -557,13 +557,13 @@ Most modern apps — mobile apps especially — store data remotely, either in a
 
 	> Web Deploy is an awesome feature of Visual Studio that lets you publish apps to the cloud without having to manually FTP a bunch of files. Moreover, Web Deploy only publishes files that have changed, so if you have a large project with thousands of files and change just one or two, republishing takes almost no time at all. Web Deploy also works with many third-party hosting services such as GoDaddy.
  
-    ![Publishing the API app](Images/vs-publish-api-app.png)
+    ![Publishing the API app](images/vs-publish-api-app.png)
 
     _Publishing the API app_	
 
 1. After a few moments, the app will appear in a browser window. Note the URL in the address bar. You will need this URL in the next exercise, so **copy it into your favorite text editor where you can easily retrieve it**. The app is no longer running locally; it's on the Web, where it's accessible to apps and other services.
  
-    ![The published API app](Images/ie-published-api-app.png)
+    ![The published API app](images/ie-published-api-app.png)
 
     _The published API app_	
 
@@ -576,13 +576,13 @@ A Web service that features a REST interface like the Azure API App you deployed
 
 1. In order to build and run UWP apps on a Windows 10 PC, you must enable developer mode on the device. To ensure that developer mode is enabled, click the **Windows** button (also known as the Start button) in the lower-left corner of the desktop. Then select **Settings** from the menu and click **Update & security** in the **Settings** dialog. Now click **For developers** on the left and select **Developer mode** on the right, as shown below.
  
-    ![Enabling developer mode](Images/windows-use-dev-mode.png)
+    ![Enabling developer mode](images/windows-use-dev-mode.png)
 
     _Enabling developer mode_	
 
 1. In Solution Explorer, right-click the "OrderViewServices" solution (the solution, not the project) and select **Add -> New Project**. Select **Blank App (Universal Windows)** as the project type and name the project "OrderView." Then click **OK**. When prompted to choose platform versions, accept the defaults.
  
-    ![Adding a UWP project](Images/vs-add-new-uwp-project.png)
+    ![Adding a UWP project](images/vs-add-new-uwp-project.png)
 
     _Adding a UWP project_	
  
@@ -1066,7 +1066,7 @@ A Web service that features a REST interface like the Azure API App you deployed
 
 1. Now use Visual Studio's **Debug -> Start Without Debugging** command (or press **Ctrl+F5**) to launch the app. Confirm that it shows a list of orders for Janet:
  
-    ![Running the completed UWP app](Images/vs-uwp-complete.png)
+    ![Running the completed UWP app](images/vs-uwp-complete.png)
 
     _Running the completed UWP app_ 
 
@@ -1074,7 +1074,7 @@ A Web service that features a REST interface like the Azure API App you deployed
 
 1. Click an order and confirm that a popup appears with information about the customer that placed the order, including the customer's phone number.
  
-	![Viewing information about the customer that placed an order](Images/order-popup-1.png)
+	![Viewing information about the customer that placed an order](images/order-popup-1.png)
 
     _Viewing information about the customer that placed an order_
 
@@ -1093,7 +1093,7 @@ To limit the orders that a salesperson can see, you can take advantage of [row-l
 
 1. Return to Visual Studio's SQL Server Object Explorer. Right-click the Northwind database and select **New Query...** from the context menu.
   
-     ![Starting a new query](Images/vs-select-new-query-02.png)
+     ![Starting a new query](images/vs-select-new-query-02.png)
 
     _Starting a new query_		
 
@@ -1101,25 +1101,25 @@ To limit the orders that a salesperson can see, you can take advantage of [row-l
 
 1. Now let's use dynamic data masking to hide telephone numbers. Return to the Azure Portal and open the Northwind database.
  
-    ![Opening the Northwind database](Images/open-database.png)
+    ![Opening the Northwind database](images/open-database.png)
 
     _Opening the Northwind database_	
 
 1. In the "Northwind" blade, click **Dynamic data masking** in the menu on the left.
  
-	![Accessing dynamic data masking settings](Images/portal-select-dynamic-data-masking.png)
+	![Accessing dynamic data masking settings](images/portal-select-dynamic-data-masking.png)
 
     _Accessing dynamic data masking settings_
 
 1. Click the **Add Mask** button for the Phone column in the Customers table. A new mask named "dbo_Customers_Phone" is created and assigned a default value of "0, xxxx, 01-01-1900." 
  
-	![Applying a dynamic data mask](Images/portal-add-customer-mask.png)
+	![Applying a dynamic data mask](images/portal-add-customer-mask.png)
 
     _Applying a dynamic data mask_
  
 1. This mask would actually do what we want it to do. However, it gives the impression that the field contains a date. Let's change it to something more appropriate. Click **dbo_Customers_Phone**. In the "Edit Masking Rule" blade, change **Masking Field Format** to **Custom string**, and enter "xxxxxxx" (without quotation marks) in the **Padding String** box. Then click **Update** in the "Edit Masking Rule" blade, and **Save** in the "Northwind" blade.
  
-	![Customizing the data mask](Images/portal-update-customer-mask.png)
+	![Customizing the data mask](images/portal-update-customer-mask.png)
 
     _Customizing the data mask_ 
  
@@ -1127,13 +1127,13 @@ To limit the orders that a salesperson can see, you can take advantage of [row-l
 
 1. When the app loads, Janet sees orders for all employees. Now select **Andrew** from the **SALESPERSON** list and confirm that Andrew only sees orders for Andrew.
  
-	![Row-level security in action](Images/app-andrew-selected.png)
+	![Row-level security in action](images/app-andrew-selected.png)
 
     _Row-level security in action_
  
 1. To see dynamic data masking in action, click an order and confirm that the customer's phone number is XXXed out in the popup. (The number on the final line is a fax number, not a voice number.)
  
-	![Dynamic data masking in action](Images/order-popup-2.png)
+	![Dynamic data masking in action](images/order-popup-2.png)
 
     _Dynamic data masking in action_ 
 
@@ -1148,7 +1148,7 @@ In this exercise, you will delete the resource group created in [Exercise 1](#Ex
 
 1. In the Azure Portal, open the blade for the "SQLDatabaseResourceGroup" resource group. Then click the **Delete** button at the top of the blade.
 
-	![Deleting the resource group](Images/delete-resource-group.png)
+	![Deleting the resource group](images/delete-resource-group.png)
 
 	_Deleting the resource group_
 
