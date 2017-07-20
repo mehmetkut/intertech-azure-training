@@ -50,19 +50,19 @@ In this exercise, you will use [Visual Studio Code](https://code.visualstudio.co
 
 1. Start Visual Studio Code. Open the **File** menu and select **Open Folder**.
 
-    ![Starting the project](Images/build-codeopenfolder.png)
+    ![Starting the project](images/build-codeopenfolder.png)
 
     _Starting the project_
     
 1. Select the project folder that you created in Step 1. Then click the **Select Folder** button.
 
-    ![Selecting a project folder](Images/build-codeselectfolder.png)
+    ![Selecting a project folder](images/build-codeselectfolder.png)
 
     _Selecting a project folder_
     
 1. From the **File** menu, select **New File**.
 
-    ![Adding a file to the project](Images/build-codenewfile.png)
+    ![Adding a file to the project](images/build-codenewfile.png)
 
     _Adding a file to the project_
     
@@ -174,7 +174,7 @@ In this exercise, you will use [Visual Studio Code](https://code.visualstudio.co
 
 1. Use the **File -> Save** command to save the file. Name it **index.php**.
 
-    ![Saving the file](Images/build-codesavefile.png)
+    ![Saving the file](images/build-codesavefile.png)
 
     _Saving the file_
     
@@ -405,7 +405,7 @@ In this exercise, you will use [Visual Studio Code](https://code.visualstudio.co
 
 1. Open the **View** menu and select **Explorer**. In the panel that appears, hover the mouse over the project folder and click the **New Folder** icon to create a new folder in the project folder. Name the new folder **Content**.
 
-    ![Adding a Content folder to the project](Images/build-codenewfolder.png)
+    ![Adding a Content folder to the project](images/build-codenewfolder.png)
 
     _Adding a Content folder to the project_
      
@@ -471,7 +471,7 @@ In this exercise, you will use [Visual Studio Code](https://code.visualstudio.co
 
 The files listed in the Explorer panel for your project should now look like this:
 
-![Project content](Images/build-codefinalfolder.png)
+![Project content](images/build-codefinalfolder.png)
     
 _Project content_
 
@@ -486,19 +486,19 @@ There are several ways to provision an Azure Web App. In this exercise, you will
 
 1. Click **+ New**. In the "New" blade that opens, type "web app mysql" (without quotation marks) into the search box and press **Enter**.
 
-    ![Finding the "Web App + MySQL" template](Images/find-webappmysql.png)
+    ![Finding the "Web App + MySQL" template](images/find-webappmysql.png)
 
     _Finding the "Web App + MySQL" template_
 
 1. Two new blades named "Marketplace" and "Everything" open in the portal. The former represents the [Microsoft Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/), which is an online store containing thousands of free templates for deploying apps, services, virtual machines, and more, preconfigured for Azure and provisioned with popular tools such as WordPress, CakePHP, and Django. In the "Everything" blade, click **Web App + MySQL**.
 
-    ![Selecting the "Web App + MySQL" template](Images/select-webappmysql.png)
+    ![Selecting the "Web App + MySQL" template](images/select-webappmysql.png)
 
     _Selecting the "Web App + MySQL" template_
     
 1. In the "Web App + MySQL" blade that opens, take a moment to review the text and learn what the template provisions. Then click the **Create** button at the bottom of the blade.
 
-    ![Creating a Web App with MySQL](Images/create-web-app.png)
+    ![Creating a Web App with MySQL](images/create-web-app.png)
 
     _Creating a Web App with MySQL_
 
@@ -506,19 +506,19 @@ There are several ways to provision an Azure Web App. In this exercise, you will
 
 	> Resource groups are a powerful construct for grouping resources such as storage accounts, databases, and virtual machines together so they can be managed as a unit. Deleting a resource group deletes everything inside it and prevents you from having to delete those resources one by one.
 
-    ![Configuring the Web App](Images/web-app-parameters-1.png)
+    ![Configuring the Web App](images/web-app-parameters-1.png)
 
     _Configuring the Web App_
 
 1. Click **App Service plan/location**, and then click **Create New** to create a new App Service plan for your Web app. In the "New App Service plan" blade, enter "WebAppsLabServicePlan" (without quotation marks) as the service-plan name and select the location nearest you. Then click **Pricing tier** and select the **F1 Free** tier. Click **Select** to finalize your tier selection, and then click **OK** in the "New App Service plan" blade to create the new service plan.
 
-    ![Creating an App Service plan](Images/web-app-parameters-2.png)
+    ![Creating an App Service plan](images/web-app-parameters-2.png)
 
     _Creating an App Service plan_
 
 1. Check **Pin to Dashboard** at the bottom of the "Web App + MySQL" blade, and then click the **Create** button to create your Web app.
 
-    ![Creating the Web App](Images/web-app-parameters-4.png)
+    ![Creating the Web App](images/web-app-parameters-4.png)
 
     _Creating the Web App_
     
@@ -526,13 +526,13 @@ There are several ways to provision an Azure Web App. In this exercise, you will
 
 1. Click the Web site URL to browse to the placeholder page for your new Web site. 
 
-    ![The Web site URL](Images/open-websiteplaceholder.png)
+    ![The Web site URL](images/open-websiteplaceholder.png)
 
     _The Web site URL_
 
 1. Confirm that the placeholder page appears. Then close the browser window or tab in which it opened and return to the Azure Portal.
 
-    ![The Web site's temporary home page](Images/placeholder-page.png)
+    ![The Web site's temporary home page](images/placeholder-page.png)
 
     _The Web site's temporary home page_
 
@@ -545,49 +545,49 @@ Now it is time to copy the files that comprise your Web site to the Azure Web Ap
 
 1. Click **Deployment credentials** in the blade for the Web App.
  
-    ![Viewing deployment credentials](Images/deploy-deploymentcredentials.png)
+    ![Viewing deployment credentials](images/deploy-deploymentcredentials.png)
 
     _Viewing deployment credentials_
 
 1. Enter a user name and password for connecting to your site via FTP. **Be sure to remember the password**. Click the **Save** button at the top of the blade to save these credentials.
 
-    ![Specifying FTP credentials](Images/deploy-enter-credentials.png)
+    ![Specifying FTP credentials](images/deploy-enter-credentials.png)
 
     _Specifying FTP credentials_
 
 1. Click **Overview** in the blade for the Web app.
 
-    ![Specifying FTP credentials](Images/open-overview.png)
+    ![Specifying FTP credentials](images/open-overview.png)
 
     _Specifying FTP credentials_
 
 1. Locate the **FTP/deployment username** and **FTP hostname** values. Hover the mouse cursor over the FTP hostname and click the **Copy** button that appears on the right to copy the hostname to the clipboard.
   
-    ![The FTP username and hostname](Images/deploy-getftpstrings.png)
+    ![The FTP username and hostname](images/deploy-getftpstrings.png)
 
     _The FTP username and hostname_
 
 1. Open a File Explorer window and paste the FTP hostname value into the address box at the top of the window. Then press **Enter**.
      
-    ![Entering the FTP hostname in File Explorer](Images/deploy-windowsenterftphostname.png)
+    ![Entering the FTP hostname in File Explorer](images/deploy-windowsenterftphostname.png)
 
     _Entering the FTP hostname in File Explorer_
      
 1. When prompted to enter FTP credentials, enter the FTP username (the **FTP/deployment username** in Step 4) and the password you specified in Step 2. Then click **Log On**.
 
-    ![Entering your FTP credentials](Images/deploy-windowscredentials.png)
+    ![Entering your FTP credentials](images/deploy-windowscredentials.png)
     
     _Entering your FTP credentials_
 
 1. Double-click the **site** folder in the File Explorer window.
 
-    ![Opening the site folder](Images/deploy-open-site-folder.png)
+    ![Opening the site folder](images/deploy-open-site-folder.png)
     
     _Opening the site folder_
 
 1. Double-click the **wwwroot** folder in the File Explorer window. This is the root folder for your Web site.
 
-    ![Opening the wwwroot folder](Images/deploy-open-wwwroot-folder.png)
+    ![Opening the wwwroot folder](images/deploy-open-wwwroot-folder.png)
     
     _Opening the wwwroot folder_
 
@@ -597,13 +597,13 @@ Now it is time to copy the files that comprise your Web site to the Azure Web Ap
     
 1. Copy all of the files and folders that comprise the Web site to your site's **wwwroot** folder.  
        
-    ![Copying the Web site files](Images/deploy-windowsftpcopy.png)
+    ![Copying the Web site files](images/deploy-windowsftpcopy.png)
 
     _Copying the Web site files_
 
 1. Congratulations! You now have a working Web site. Click the site URL in the Azure Portal to open the site in your browser.
 
-    ![Navigating to the finished Web site](Images/deploy-go-to-web-site.png)
+    ![Navigating to the finished Web site](images/deploy-go-to-web-site.png)
 
     _Navigating to the finished Web site_
 
@@ -611,7 +611,7 @@ Now it is time to copy the files that comprise your Web site to the Azure Web Ap
 
 	> The code that uploads the images limits file uploads to 4 MB to stay under PHP's default upload-size limit and to improve performance, so be sure to select images that are 4 MB or smaller in size.
 
-    ![The working Web site](Images/final-workingwebsite.png)
+    ![The working Web site](images/final-workingwebsite.png)
 
     _The working Web site_
 
