@@ -1,0 +1,29 @@
+{
+    "disabled": false,
+    "bindings": [
+        {
+            "path": "images-lg/{name}",
+            "type": "blobTrigger",
+            "name": "input",
+            "direction": "InOut"
+        },
+        {
+            "path": "images-sm/sm-{name}",
+            "type": "blob",
+            "name": "blobOutputSmall",
+            "direction": "InOut"
+        },
+        {
+            "path": "images-md/md-{name}",
+            "type": "blob",
+            "name": "blobOutputMedium",
+            "direction": "InOut"
+        },
+        {
+            "path": "images-xs/xs-{name}",
+            "type": "blob",
+            "name": "blobOutputExtraSmall",
+            "direction": "InOut"
+        }
+    ]
+}

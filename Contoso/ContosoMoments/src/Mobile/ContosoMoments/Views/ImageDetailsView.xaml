@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContosoMoments.Views.ImageDetailsView"
+             BackgroundColor="White">
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <!--Image preview-->
+    <Grid Grid.Row="1" Padding="10,0">
+      <Image Source="{Binding Image.Uri}" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+      <Image x:Name="imgLike" VerticalOptions="End" HorizontalOptions="End" Source="like.png">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnLike" />
+        </Image.GestureRecognizers>
+      </Image>
+    </Grid>
+
+    <!--Links to external images-->
+    <StackLayout Grid.Row="2" BackgroundColor="White" Padding="10,0">
+
+      <Button BackgroundColor="White" 
+        Text="View extra small" 
+        TextColor="Black" 
+        HorizontalOptions="Start" 
+        Clicked="OnOpenImage" 
+        CommandParameter="xs" 
+        Image="link.png" />
+
+      <Button BackgroundColor="White" 
+        Text="View small" 
+        TextColor="Black" 
+        HorizontalOptions="Start" 
+        Clicked="OnOpenImage" 
+        CommandParameter="sm" 
+        Image="link.png" />
+
+      <Button BackgroundColor="White" 
+        Text="View medium" 
+        TextColor="Black" 
+        HorizontalOptions="Start" 
+        Clicked="OnOpenImage" 
+        CommandParameter="md" 
+        Image="link.png" />
+              
+    </StackLayout>
+  </Grid>
+
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿{
+    "bindings": [
+        {
+            "name": "blobName",
+            "type": "queueTrigger",
+            "direction": "InOut",
+            "queueName": "deleterequest"
+        },
+        {
+            "type": "blob",
+            "name": "blobLarge",
+            "path": "images-lg/{ImageId}",
+            "direction": "InOut"
+        },
+        {
+            "type": "blob",
+            "name": "blobExtraSmall",
+            "path": "images-xs/xs-{ImageId}",
+            "direction": "InOut"
+        },
+        {
+            "type": "blob",
+            "name": "blobSmall",
+            "path": "images-sm/sm-{ImageId}",
+            "direction": "InOut"
+        },
+        {
+            "type": "blob",
+            "name": "blobMedium",
+            "path": "images-md/md-{ImageId}",
+            "direction": "InOut"
+        }
+    ],
+    "disabled": false
+}

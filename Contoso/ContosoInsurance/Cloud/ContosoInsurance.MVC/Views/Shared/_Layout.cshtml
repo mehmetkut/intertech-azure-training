@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", required: false)
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="/">
+                <img src="/Content/images/logo.png" />
+                <h1 class="font-segeo-ui">Contoso Insurance</h1>
+            </a>
+        </div>
+        <div class="user-info">
+            <a href="/Admin">
+                <span class="login-name roboto-regular">@ContosoInsurance.MVC.Helper.AuthenticationHelper.GetUserName()</span>
+                <span class="login-status">
+                    <img src="/Content/images/user.png" />
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <footer>
+            
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/moment")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

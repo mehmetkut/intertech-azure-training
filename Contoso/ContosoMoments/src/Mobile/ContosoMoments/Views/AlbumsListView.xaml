@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContosoMoments.Views.AlbumsListView"
+             BackgroundColor="#8C0A4B"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:local="clr-namespace:ContosoMoments.Views;assembly=ContosoMoments">
+
+  <Grid RowSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <!--Header-->
+    <Grid Grid.Row="0" Padding="10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="45"/>
+        <ColumnDefinition Width="45"/>
+        <ColumnDefinition Width="45"/>
+      </Grid.ColumnDefinitions>
+      <Image Grid.Column="0" HeightRequest="40" VerticalOptions="Center" Source="logotext.png" />
+
+      <Image x:Name="imgSync" VerticalOptions="Center" HeightRequest="30" WidthRequest="30" Grid.Column="2" Source="sync.png">
+        <Image.IsVisible>
+          <OnPlatform x:TypeArguments="x:Boolean" iOS="False" Android="False" WinPhone="True"/>
+        </Image.IsVisible>
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnSyncItems" />
+        </Image.GestureRecognizers>
+      </Image>
+
+      <Image VerticalOptions="Center" Grid.Column="3" HeightRequest="30" WidthRequest="30" x:Name="imgSettings" Source="settings.png">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnSettings" />
+        </Image.GestureRecognizers>
+      </Image>
+
+      <Image VerticalOptions="Center" Grid.Column="4" HeightRequest="30" WidthRequest="30" x:Name="imgAddAlbum" Source="plus.png">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnAdd" />
+        </Image.GestureRecognizers>
+      </Image>
+      
+      
+    </Grid>
+
+    <StackLayout Grid.Row="1" BackgroundColor="White" Orientation="Vertical">
+      <Grid x:Name="grdInput" IsVisible="{Binding ShowInputControl}" BackgroundColor="#8C0A4B" Padding="10" >
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="New album name:" Grid.Row="0" Grid.Column="0" TextColor="White" HorizontalOptions="StartAndExpand"/>
+        <Entry x:Name="entAlbumName" Text="{Binding EditedAlbumName}" IsPassword="False" Keyboard="Text" Grid.Row="1" Grid.Column="0" TextColor="White">
+          <Entry.TextColor>
+            <OnPlatform x:TypeArguments="Color" iOS="Black" Android="White" WinPhone="White"/>
+          </Entry.TextColor>
+        </Entry>
+        <Button x:Name="btnUpdate" Text="{Binding CreateOrUpdateButtonText}" Grid.Row="1" Grid.Column="1" Clicked="OnCreateClick" TextColor="White"/>
+        <Button x:Name="btnCancel" Text="Cancel" Grid.Row="1" Grid.Column="2" Clicked="OnCancelClick" TextColor="White" IsVisible="False"/>
+      </Grid>
+
+    </StackLayout>
+
+
+    <!--List of albums-->
+    <ListView
+      Grid.Row="2" BackgroundColor="White"
+      x:Name="albumsList"
+      ItemSelected="OnSelected"
+      IsPullToRefreshEnabled="true"
+      Refreshing="OnSyncItems"
+      ItemsSource="{Binding Albums}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.ContextActions>
+              <MenuItem Text="Rename" Command="{Binding Path=BindingContext.RenameCommand, Source={x:Reference albumsList} }" CommandParameter="{Binding .}" />
+              <MenuItem Text="Delete" Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference albumsList} }" CommandParameter="{Binding .}" IsDestructive="True" />
+            </ViewCell.ContextActions>
+            <Grid Padding="10">
+              <Label Text="{Binding AlbumName}" TextColor="Black" VerticalTextAlignment="Center"/>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+    <ActivityIndicator Grid.Row="2" IsVisible="False" IsEnabled="True" x:Name="syncIndicator" Color="#8C0A4B"
+                       HorizontalOptions="Center" VerticalOptions="Center" />
+
+    
+  </Grid>
+</ContentPage>

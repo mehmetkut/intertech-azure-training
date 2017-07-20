@@ -1,11 +1,3 @@
----
-title: Visual Studio Team Services Demo Generator- Overview 
-layout: page
-sidebar: vsts
-permalink: /labs/vsts/VSTSDemoGenerator/
-folder: /labs/vsts/VSTSDemoGenerator/
----
-
 ## Overview 
 
 Visual Studio Team Services Demo Generator helps you create projects on your Visual Studio Team Services account with preset sample content which includes source code, work items, service endpoints, build and release definitions based on a template you choose.
