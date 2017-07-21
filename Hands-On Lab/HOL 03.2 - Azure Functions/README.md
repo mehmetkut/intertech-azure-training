@@ -172,7 +172,7 @@ Once you have created an Azure Function App, you can add Azure Functions to it. 
 	    HttpContent payload = new ByteArrayContent(bytes);
 	    payload.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/octet-stream");
 	    
-	    var results = await client.PostAsync("https://api.projectoxford.ai/vision/v1.0/analyze?visualFeatures=Adult", payload);
+	    var results = await client.PostAsync("https://westeurope.api.cognitive.microsoft.com/vision/v1.0//analyze?visualFeatures=Adult", payload);
 	    var result = await results.Content.ReadAsAsync<ImageAnalysisInfo>();
 	    return result;
 	}
