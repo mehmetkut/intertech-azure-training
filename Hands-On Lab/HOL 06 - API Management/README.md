@@ -1,4 +1,4 @@
-Overview
+# Overview
 
 This lab shows you how to quickly get started in using Azure API Management and make your first API call.
 
