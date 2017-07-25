@@ -175,52 +175,8 @@ We will now see how you can deal with variables, setup different trigger mechani
 
 
 
-## Exercise 4: Working with Artifacts
 
-An artifact is a deployable component of your application. Visual Studio Team Services has the ability to explicitly manage the content of artifacts during a build. 
-
-1.  Go to your **Build** Definition and edit. Click on **Add Task** ti add few tasks.
-
-2.  Add **Command Line** task from the **Utility** section and update its properties.
-    - Tool: dotnet
-    - Arguments: publish -c $(BuildConfiguration) $(WebDir)/project.json
-
-    <img src="images/32.png" width="624"/>
-
-3. Add **Archive Files** task from the **Utility** section and update its properties to zip the project output.
-    - Root Folder: $(Build.SourcesDirectory)\$(WebDir)\bin\$(BuildConfiguration)\netcoreapp1.0\publish
-    - Prefix root folder name to archive paths: Uncheck this option.
-    - Archive File to create: $(Build.SourcesDirectory)\$(WebDir)\bin\webapp.zip
-
-   <img src="images/28.png" width="624"/>
-
-   <img src="images/31.png" width="624"/>
-
-4. Add **Publish Build Artifacts** task from the **Utility** section and update its properties to publish the web project.
-    - Path to publish: $(Build.SourcesDirectory)\$(WebDir)\bin\webapp.zip
-    - Artifact Name: WebApp
-    - Artifact Type: Server
-   
-   <img src="images/29.png" width="624"/>
-
-   <img src="images/30.png" width="624"/>
-
-5. Click **Save and Queue** build. 
-
-6. You should see the **Build Summary** once completed.
-
-   <img src="images/33.png" width="624"/>
-
-7. Click on **artifacts** to view the packaged content.
-
-   <img src="images/34.png" width="624"/>
-   
-   <img src="images/35.png" />
-
-8. The webapp artifact contains the application files ready to be deployed.
-   
-
-## Exercise 5: Running Tests with Build
+## Exercise 3: Running Tests with Build
 
 Make sure your app still works after every commit and build using VSTS. Find problems earlier by running tests automatically with each build. When your build is done, review your test results to start resolving the problems that you find.
 
