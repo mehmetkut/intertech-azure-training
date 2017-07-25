@@ -21,7 +21,7 @@ Also, this example requires these items:
 
 -   A link to a website's RSS feed. This example uses the [*RSS feed for
     > top stories from the CNN.com
-    > website*](http://rss.cnn.com/rss/cnn_topstories.rss):http://rss.cnn.com/rss/cnn\_topstories.rss
+    > website*](http://rss.cnn.com/rss/cnn_topstories.rss)
 
 Add a trigger that starts your workflow
 
