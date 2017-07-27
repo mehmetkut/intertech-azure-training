@@ -45,7 +45,7 @@ public static void Run(string myQueueItem, TraceWriter log)
 
 private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
         {
-            return ConnectionMultiplexer.Connect("hol11.redis.cache.windows.net:6380,password=QVPwKmy5/U2/y8LEToibR33p5ccQjhV1f46clX3OdZE=,ssl=True,abortConnect=False");
+            return ConnectionMultiplexer.Connect("your cache connection string");
         });
 
         public static ConnectionMultiplexer Connection
