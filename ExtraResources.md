@@ -31,3 +31,7 @@
 ## Haberler
 
 [https://azureinfohub.azurewebsites.net/](https://azureinfohub.azurewebsites.net/)
+
+
+### Service Bus ve Storage Service Bus Farkları
+[https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted)
