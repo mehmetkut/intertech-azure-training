@@ -1,5 +1,6 @@
 > project.json adında dosya oluşturun içeriği aşağıdaki gibi olacak.
 
+```json
 {
     "frameworks": {
         "net46": {
@@ -10,10 +11,11 @@
         }
     }
 }
-
+```
 
 > Queue tipinde bir azure functions içeriği aşağıdaki gibi olacak 
 
+```C#
 using System;
 using System.Net;
 using Newtonsoft.Json;
@@ -53,4 +55,4 @@ private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionM
                 return lazyConnection.Value;
             }
         }
-
+```
